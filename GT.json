@@ -1,0 +1,112 @@
+{
+    "data": [
+        {
+            "tag": "greeting",
+            "input": [
+                "Hi",
+                "Hello",
+                "Hola",
+                "How are you",
+                "Is there anyone",
+                "Hellew",
+                "Good day"
+            ],
+            "output": [
+                "Hellooooo",
+                "Welcome to a calming place",
+                "Hello, I am Bandhu, your personalized mental health companion",
+                "I am here:)"
+            ]
+        },
+        {
+            "tag": "farewell",
+            "input":[
+                "Bye",
+                "Farewell",
+                "Thank You",
+                "Thanks for your help"
+            ],
+            "output":[
+                "Welcome",
+                "Bye, Have a nice day",
+                "We are happy to help you:)",
+                "I hope my help is was very useful for you"
+            ]
+        },
+        {
+            "tag": "anx-gen-first-inp",
+            "input": [
+                "I think I have anxiety",
+                "I believe I may be dealing with anxiety. I've been feeling overwhelmed and stressed, and it's affecting my daily life.",
+                "I've been reflecting on my emotions lately, and I've noticed a pattern of excessive worry and unease. I think I might be experiencing anxiety.",
+                "I've been going through a tough time, and I think it's more than just regular stress. I've been reading about anxiety, and the symptoms seem to align with what I'm feeling.",
+                "It's been hard for me to articulate, but I've been struggling with intense feelings of nervousness and fear. After some research, it seems like it might be anxiety.",
+                "I've noticed that my daily life is getting affected by constant worry and tension. It's challenging to cope, and I suspect it could be anxiety. What do you think?"
+            ],
+            "output": [
+                "Have you worried a lot in the last month?",
+                "What do you worry about? ",
+                "What is it like when you worry?",
+                "Do unpleasant thoughts constantly go round and round in your mind?",
+                "Can you stop them by turning your attention to something else?",
+                "How often have you worried like this in the last month?"
+            ]
+        },
+        {
+            "tag": "not-feeling-well",
+            "input":[
+                "Hello, I am not feeling well",
+                "I am disturbed",
+                "I am sad, can you help me?",
+                "There is a lot going on my mind, I am not sure whether I am ok or not"
+            ],
+            "output":[
+                "I am here to help you, relax. Care to answer few question?"
+            ]
+        },
+        {
+            "tag": "no-comfortable",
+            "input":[
+                "No",
+                "nO",
+                "no",
+                "NO"
+            ],
+            "output":[
+                "It's fine, feel free to contact me when you are comfortable",
+                "I know you are uncomfortable, but I will be always here to help you when ever you return",
+                "Even if I am a chatbot, I will always regard your privacy and all your data is safe with me(unlike humans)",
+                "No problem, you are the best and feel free to contact me, I will be always there for you!"
+            ]
+        },
+        {
+            "tag": "detected-general-mental-test",
+            "input":["detected general mental test"],
+            "output":[
+                "According to me you are a little disturbed, you are unable to sleep and tierd. I would like you to sleep and rest. Go out with friends etc! You are perfectly fine",
+                "Analyzing you result I would say that, you are a little stressed and tierd. Just go out with friends and enjoy life. Take a break watch comedy show. Exercise for a while",
+                "After looking at your result, I would say exercise a little, avoid consuming negative content on social media.",
+                "You are a little disturbed, just relax a little, in a stress free environment meditate and exercise",
+                "Don't Panic and stress out my friend, you are a little disturbed, hust meditate, go for a walk and enjoy life"
+            ]
+        },
+        {
+            "tag": "severe-general-mental-test",
+            "input":["severe general mental test"],
+            "output":[
+                "Don't panic my friend, but I will recommend you to consult a doctor. Your secret is safe with me and so it will be with doctor. Having mental health problems is like having an annoying person in life, the person will be a part of you life but not for along time"
+            ]
+        },
+        {
+            "tag": "undetected-general-mental-test",
+            "input":["undetected general mental test"],
+            "output":[
+                "You are totally fine, maybe you are overconcerned , just relax",
+                "You are perfectly fit and fine",
+                "Who is that? The best fine person to exist!!",
+                "If there was an award for best mental health, you would have been first my friend!!!"
+            ]
+        }
+
+    ]
+}
