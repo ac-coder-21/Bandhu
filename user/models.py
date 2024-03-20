@@ -19,7 +19,9 @@ class User:
             "_id": uuid.uuid4().hex,
             "name": request.form.get('name'),
             "email": request.form.get('email'),
-            "password": request.form.get('password')
+            "password": request.form.get('password'),
+            "salary": request.form.get('salary_range'),
+            "collar": request.form.get('collar')
         }
 
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
