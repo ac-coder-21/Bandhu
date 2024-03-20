@@ -127,14 +127,14 @@
         {
             "tag": "not-exhausted",
             "input": [
-                "I am energized",
-                "I am always fresh",
+                " energized",
+                " always fresh",
                 "not tired",
                 "not exhausted",
-                "i am refreshed",
+                " refreshed",
                 "fired up",
-                "I have rested properly",
-                "I am feeling lively"
+                " rested properly",
+                " feeling lively"
             ],
             "output":[
                 "0.Nice, resting and not feeling tired and exhausted is an essetial part of maintaining mental wellbeing"

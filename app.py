@@ -7,6 +7,11 @@ from GT.chat_gt import get_response
 from Anxiety.chat_anx import get_response_anx
 from det_que_or_continuation import gmh_questions, anx_questions
 from bson import ObjectId
+from fpdf import FPDF
+
+
+
+
 
 app = Flask(__name__)
 app.secret_key = b'\xca\xfc\x17\xbd\xda\x15\xf9\x16[\xc2\x08\xbaP\x8d\xf8\xa1'
@@ -48,10 +53,13 @@ def signout():
 def predict():
     mongo_uri = "mongodb://localhost:27017/test_mc"
     client = pymongo.MongoClient(mongo_uri)
-    db = client.test_mc
-    collection = db.Project
+    db = client.test_user
+    collection = db.users
 
-    target_object_id = ObjectId("65e4267c064e0a1420a3c6c5")
+    pdf = FPDF()
+
+
+    target_object_id = session['user']['_id']
 
     document = collection.find_one({"_id": target_object_id})
     if document is None:
@@ -107,7 +115,7 @@ def predict():
         score = db.score
 
         score_data = {
-            "_idUser": ObjectId("65e4267c064e0a1420a3c6c5"),
+            "_idUser": target_object_id,
             "test": "General Mental Health assessment test",
             "score": str(precent_resp*100) + '%'
         }
@@ -129,6 +137,10 @@ def predict():
             message = {"output": output}
             return jsonify(message)
         
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("helvetica", "", 10)
+        
         
 
 
@@ -146,10 +158,10 @@ def gt_ui():
 def predict_anx():
     mongo_uri = "mongodb://localhost:27017/test_mc"
     client = pymongo.MongoClient(mongo_uri)
-    db = client.test_mc
-    collection = db.Project
+    db = client.test_user
+    collection = db.users
 
-    target_object_id = ObjectId("65e4267c064e0a1420a3c6c5")
+    target_object_id = session['user']['_id']
 
     document = collection.find_one({"_id": target_object_id})
     if document is None:
@@ -232,7 +244,7 @@ def predict_anx():
         score = db.score
 
         score_data = {
-            "_idUser": ObjectId("65e4267c064e0a1420a3c6c5"),
+            "_idUser": session['user']['_id'],
             "test": "Anxiety test",
             "score": str(precent_resp*100) + '%'
         }

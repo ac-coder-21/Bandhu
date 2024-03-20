@@ -21,7 +21,12 @@ class User:
             "email": request.form.get('email'),
             "password": request.form.get('password'),
             "salary": request.form.get('salary_range'),
-            "collar": request.form.get('collar')
+            "collar": request.form.get('collar'),
+            "age": request.form.get('age'),
+            "city": request.form.get('city'),
+            "qualification": request.form.get('qualification'),
+            "score": 0,
+            "val": 0
         }
 
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
