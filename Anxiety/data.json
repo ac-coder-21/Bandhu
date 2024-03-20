@@ -1,0 +1,384 @@
+{
+    "data": [
+        {
+            "tag": "greeting",
+            "input": [
+                "Hi",
+                "Hello",
+                "Hola",
+                "How are you",
+                "Is there anyone",
+                "Hellew",
+                "Good day"
+            ],
+            "output": [
+                "Hellooooo",
+                "Welcome to a calming place",
+                "Hello, I am Bandhu, your personalized mental health companion",
+                "I am here:)"
+            ]
+        },
+
+
+        {
+            "tag": "farewell",
+            "input":[
+                "Bye",
+                "Farewell",
+                "Thank You",
+                "Thanks for your help"
+            ],
+            "output":[
+                "Welcome",
+                "Bye, Have a nice day",
+                "We are happy to help you:)",
+                "I hope my help is was very useful for you"
+            ]
+        },
+
+
+        {
+            "tag": "worried",
+            "input": [
+                "I am worried",
+                "I am concerned",
+                "I am nervous",
+                "I am nervous when I am worried",
+                "Continuously thinking makes me worried",
+                "I am bothered",
+                "feeling anxious",
+                "I am bothered",
+                "I feel upset",
+                "having unpleasnat thoughts",
+                "racing thougts",
+                "continuosly thinking"
+            ],
+            "output":[
+                "1.It's okay to be worried, we have many things in our life that worried us, so take a chill pill watch a movie do some meditaion"
+            ]
+        },
+
+
+        {
+            "tag": "not-worried",
+            "input": [
+                "I am not worried",
+                "no worries",
+                "not nervous",
+                "Feeling happy",
+                "I am cheerful"
+            ],
+            "output": [
+                "0.Ohh nice, worrying about irrelevant things brings no gain and as you are not worried you know it well"
+            ]
+        },
+
+
+        {
+            "tag": "aches",
+            "input":[
+                "mild headache",
+                "a little body pain",
+                "ache in back shoulder",
+                "tightness in scalp",
+                "forehead ache",
+                "band around head",
+                "slight pain",
+                "back pain"
+            ],
+            "output":[
+                "1.Aches are body always tell that there is something wrong with body, even in this case, drink water a lot, get some rest exercise a lot"
+            ]
+        },
+
+        {
+            "tag": "no-aches",
+            "input": [
+                "My body is painless",
+                "acheless",
+                "no pain",
+                "fit and fine",
+                "comfort in body"
+            ],
+            "output": [
+                "0.Good to see that you are perfectly fit and fine my friend, continue with your daily activites and ace them"
+            ]
+        },
+
+        
+        {
+            "tag": "exhauted",
+            "input": [
+                "feeling tired",
+                "I am feeling exhausted",
+                "I am feeling drained",
+                "not feeling good",
+                "low on energy",
+                "experiencing fatigue",
+                "I have been overworking",
+                "worn out",
+                "overworking for promotion"
+            ],
+            "output": [
+                "1.Overworking is bad for health, you must rest, clear you mind, listen to music"
+            ]
+        },
+
+        {
+            "tag": "not-exhausted",
+            "input": [
+                "I am energized",
+                "I am always fresh",
+                "not tired",
+                "not exhausted",
+                "i am refreshed",
+                "fired up",
+                "I have rested properly",
+                "I am feeling lively"
+            ],
+            "output":[
+                "0.Nice, resting and not feeling tired and exhausted is an essetial part of maintaining mental wellbeing"
+            ]
+        },
+
+
+
+        {
+            "tag": "stressed",
+            "input": [
+                "I am stressed",
+                "strained a lot",
+                "it's difficult to relax, unable to relax",
+                "a little tensed",
+                "unable to relax",
+                "frequently stressed",
+                "unable to get rid of tension",
+                "riled up",
+                "always riled up",
+                "stressed because of work",
+                "too much pressure",
+                "pressure due to work",
+                "unable to relax due to work",
+                "working new job makes me stressed",
+                "tensed",
+                "worried and tensed"
+            ],
+            "output":[
+                "1.Stress is very bad for mental health, try to meditate regularly, go on a vacation of possible"
+            ]
+        },
+
+        {
+            "tag":"unstressed",
+            "input": [
+                "not stressed",
+                "relaxed",
+                "never get riled up",
+                "I am never tensed",
+                "don't have any tension",
+                "felleing relaxed"
+            ],
+            "output":[
+                "0.very good my friend, stressing is not very helpful, so it's better just enjoy your life stress free"
+            ]
+        },
+
+
+        {
+            "tag": "fidgety",
+            "input":[
+                "yes I am little restless",
+                "I am feeling uneasy",
+                "uneasiness",
+                "restless",
+                "jumpy",
+                "unrested",
+                "antsy"
+            ],
+            "output":["1.Feeling restless and fidgety is common, meditate and relax for a while!!"]
+        },
+
+        {
+            "tag": "calm",
+            "input":[
+                "I am calm",
+                "composed",
+                "easygoing",
+                "quite stable",
+                "restful"
+            ],
+            "output":[
+                "0. Nice my friend , being restless is a very bad thing as you won't be able to properly concentrate"
+            ]
+        },
+
+        {
+            "tag": "weak",
+            "input":[
+                "feeling weak",
+                "feeling frail",
+                "feintness",
+                "poor physical health",
+                "debilitation"
+            ],
+            "output":[
+                "1.If you are feeling weak then there can be number of reasons, it's best to consult a doctor for that expecially a physiotherepaist"
+            ]
+        },
+
+        {
+            "tag":"strong",
+            "input":[
+                "no, my body feel great",
+                "feel strong",
+                "flexible",
+                "maintained body health",
+                "maintained physical health"
+            ],
+            "output":[
+                "0.It is said that the road to a proper mental health goes from physical health"
+            ]
+        },
+        
+
+        {
+            "tag":"frightened",
+            "input": [
+                "Yes I am afraid",
+                "pankicking",
+                "have pancik attacks",
+                "get spooked",
+                "feel pressure in conference",
+                "numb under pressure",
+                "terrfied",
+                "having stage fear",
+                "cold feet",
+                "afraid",
+                "something bad might happen",
+                "can't face day"
+
+            ],
+            "output":[
+                "1.Such type of problem occur because of being underconfident and someone's over whelming presence might cause over pressure on you",
+                "1.Thinking about terrbile things, cause more tension and which will lead to more fear and the cycle will continue, clear you minf using meditation"
+            ]
+        },
+
+        {
+            "tag": "cool",
+            "input":[
+                "not afraid",
+                "I am cool",
+                "calm and comforted",
+                "I am bold",
+                "I am brave",
+                "confident"
+            ],
+            "output":[
+                "0.Being confident and not afraid is very much an essential part of life, and you have that part in your life"
+            ]
+        },
+
+        {
+            "tag": "unpleasant",
+            "input":[
+                "unwanting touch",
+                "no consent",
+                "unpleasant touch",
+                "bad touch",
+                "rude and bad behaviour",
+                "stalking eyes",
+                "bad look",
+                "unappropriate touch"
+            ],
+            "output": [
+                "1.This is an serious issue and this must be reported to police and HR. Appropriate steps must be taken and everyone will support you in this"
+            ]
+        },
+
+        {
+            "tag": "pleasant",
+            "input": [
+                "No bad touch",
+                "good behaviour",
+                "good working environment",
+                "pleasant working environment"
+            ],
+            "output": [
+                "0.Nice having a proper environment is very inportant part of life"
+            ]
+        },
+
+        {
+            "tag": "crowd",
+            "input": [
+                "I feel pressured in crowd",
+                "don't feel confident in crowd",
+                "nervous in crowd",
+                "can't speak in crowd",
+                "cold feet in crowd",
+                "unconfident in crowd",
+                "unable to address people",
+                "unable to make a point",
+                "can't start a conversation",
+                "have stage fear"
+            ],
+            "output":[
+                "1.Confidence is an essential part of the life and confidence can be acheived through meditation and book reading as knowledge is confidence"
+            ]
+        },
+
+        {
+            "tag": "convo",
+            "input":[
+                "can start a conversation",
+                "easily make a point",
+                "don't feel overwhelmed",
+                "explain my points to others easily",
+                "don't have stage fear"
+            ],
+            "output":[
+                "0.Very nice having confidence is very much essential for having a stable mental health"
+            ]
+        },
+
+        {
+            "tag": "avoid",
+            "input":[
+                "i tend to avoid stress situation",
+                "bad situations avoid",
+                "avoiding worst situations",
+                "avoid people",
+                "try to escape from pressure",
+                "evade situations or meetings",
+                "feeling anxious so avoiding"
+            ],
+            "output":[
+                "1.It's ok to avoid some situations, but in some situations even if there is pressure one must not abandon his post and fight till end"
+            ]
+        },
+
+        {
+            "tag": "face",
+            "input": [
+                "I face situations",
+                "don't avoid them",
+                "not trying to excape",
+                "confidently facing"
+            ],
+            "output":[
+                "0.One must always be confident, being overconfident or underconfident is very much of a disaster"
+            ]
+        },
+
+        {
+            "tag":"idu",
+            "input":[
+                "I do not understand"
+            ],
+            "output":[
+                "I do not understand"
+            ]
+        }
+    ]
+}
