@@ -50,6 +50,7 @@ def signout():
     return User().signout()
 
 @app.post("/gt")
+@login_required
 def predict():
     mongo_uri = "mongodb://localhost:27017/test_mc"
     client = pymongo.MongoClient(mongo_uri)
@@ -150,11 +151,13 @@ def predict():
         return jsonify(message)
     
 @app.route('/gt/ui')
+@login_required
 def gt_ui():
     return render_template('gt.html')
 
 
 @app.post("/anxiety")
+@login_required
 def predict_anx():
     mongo_uri = "mongodb://localhost:27017/test_mc"
     client = pymongo.MongoClient(mongo_uri)
@@ -275,8 +278,30 @@ def predict_anx():
         return jsonify(message)
 
 @app.route('/anxiety/ui')
+@login_required
 def anxiety_ui():
     return render_template('anxiety.html')
+
+@app.route('/score_graph/')
+@login_required
+def score_graph():
+
+    data = [
+        ("01-01-2020", 1597),
+        ("02-01-2020", 1456),
+        ("03-01-2020", 1908),
+        ("04-01-2020", 896),
+        ("05-01-2020", 755),
+        ("06-01-2020", 453),
+        ("07-01-2020", 1100),
+        ("08-01-2020", 1235),
+        ("09-01-2020", 1478)
+    ]
+
+    labels = [row[0] for row in data]
+    values = [row[1] for row in data]
+
+    return render_template('graph_hist.html', labels=labels, values=values)
 
 
 if __name__ == "__main__":
