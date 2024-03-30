@@ -1,0 +1,595 @@
+{
+    "data": [
+        {
+            "tag": "greeting",
+            "input": [
+                "Hi",
+                "Hello",
+                "Hola",
+                "How are you",
+                "Is there anyone",
+                "Hellew",
+                "Good day"
+            ],
+            "output": [
+                "Hellooooo",
+                "Welcome to a calming place",
+                "Hello, I am Bandhu, your personalized mental health companion",
+                "I am here:)"
+            ]
+        },
+
+
+        {
+            "tag": "farewell",
+            "input":[
+                "Bye",
+                "Farewell",
+                "Thank You",
+                "Thanks for your help"
+            ],
+            "output":[
+                "Welcome",
+                "Bye, Have a nice day",
+                "We are happy to help you:)",
+                "I hope my help is was very useful for you"
+            ]
+        },
+
+
+        {
+            "tag": "worried",
+            "input": [
+                "I am worried",
+                "I am concerned",
+                "I am nervous",
+                "I am nervous when I am worried",
+                "Continuously thinking makes me worried",
+                "I am bothered",
+                "feeling anxious",
+                "I am bothered",
+                "I feel upset",
+                "having unpleasnat thoughts",
+                "racing thougts",
+                "continuosly thinking"
+            ],
+            "output":[
+                "1.It's okay to be worried, we have many things in our life that worried us, so take a chill pill watch a movie do some meditaion"
+            ]
+        },
+
+
+        {
+            "tag": "not-worried",
+            "input": [
+                "I am not worried",
+                "no worries",
+                "not nervous",
+                "Feeling happy",
+                "I am cheerful"
+            ],
+            "output": [
+                "0.Ohh nice, worrying about irrelevant things brings no gain and as you are not worried you know it well"
+            ]
+        },
+
+        {
+            "tag": "no-concentration",
+            "input": [
+                "concentration all over the place",
+                "unable to retain what has watched",
+                "unable to understand what has "
+            ]
+        },
+
+        {
+            "tag": "aches",
+            "input":[
+                "mild headache",
+                "a little body pain",
+                "ache in back shoulder",
+                "tightness in scalp",
+                "forehead ache",
+                "band around head",
+                "slight pain",
+                "back pain"
+            ],
+            "output":[
+                "1.Aches are body always tell that there is something wrong with body, even in this case, drink water a lot, get some rest exercise a lot"
+            ]
+        },
+
+        {
+            "tag": "no-aches",
+            "input": [
+                "My body is painless",
+                "acheless",
+                "no pain",
+                "fit and fine",
+                "comfort in body"
+            ],
+            "output": [
+                "0.Good to see that you are perfectly fit and fine my friend, continue with your daily activites and ace them"
+            ]
+        },
+
+        {
+            "tag": "sleepless",
+            "input": [
+                "unable to sleep",
+                "deprived of sleep",
+                "wakefullness",
+                "difficulty in sleeping",
+                "sleepless nights",
+                "sleeplessness",
+                "feeling drowsy",
+                "restlessness"
+            ],
+            "output": [
+                "1.Unable to sleep can be caused due to excessive stress, try to relax and meditate"
+            ]
+        },
+
+        {
+            "tag": "sleep",
+            "input": [
+                "able to sleep",
+                "rested",
+                "no problem in sleeping"
+            ],
+            "output": [
+                "0.Nice, having a proper sleep is very important part of the schedule"
+            ]
+        },
+
+        {
+            "tag": "no-aches",
+            "input": [
+                "My body is painless",
+                "acheless",
+                "no pain",
+                "fit and fine",
+                "comfort in body"
+            ],
+            "output": [
+                "0.Good to see that you are perfectly fit and fine my friend, continue with your daily activites and ace them"
+            ]
+        },
+
+        {
+            "tag": "noconcentration",
+            "input": [
+                "focus is short",
+                "zoning out",
+                "empty",
+                "going through motions",
+                "nothing sticks",
+                "treading water",
+                "mind wander",
+                "barely making progress"
+            ],
+            "output": [
+                "1. Take things one step at a time. Break tasks into smaller, manageable chunks ",
+                "1. Don't be too hard on yourself. Progress takes time, and every effort counts "
+            ]
+        },
+        {
+            "tag": "concentration", 
+            "input": [
+                "fully focused",
+                "full attention",
+                "seeing results",
+                "tackling with confidence",
+                "excel",
+                "Attention to"
+            ],
+            "output": [
+                "0. Congratulations on overcoming those concentration challenges. You've shown incredible resilience. ",
+                "0. Your progress is a testament to your resilience and dedication. Keep up the fantastic work. ",
+                "0. Your success in overcoming concentration issues is well-deserved. Keep shining bright."
+            ]
+        },
+    
+     
+      {
+                "tag": "brood", 
+                "input": [
+                    "worrying about ",
+                    "dwelling on",
+                    "feeling obsessed",
+                    "brooding over",
+                    "Overthinking",
+                    "bad thoughts",
+                    "bad mood"
+                ],
+                "output": [
+                    "1.Consider incorporating activities that bring you joy or purpose into your daily routine, Remember, it's okay to ask for help when you need it."
+                ]
+            },
+    
+          {
+                "tag": "non-brood", 
+                "input": [
+                    "optimistic",
+                    "focused",
+                    "am good",
+                    "trust myself",
+                    "am happy",
+                    "going well"
+                ],
+                "output": [
+                    "0.Fantastic news! You're not struggling with brooding. Let's focus on maintaining your positive mindset and your mental well being"
+                ]
+            },
+    
+    
+            {
+                "tag": "looseintrest", 
+                "input": [
+                    "losing interest",
+                    "losing  myself",
+                    "drifting away",
+                    "not recognize myself",
+                    "spark gone",
+                    "feels dull",
+                    "nothing stick"
+                ],
+                "output": [
+                    "1.It's okay if your interests are shifting. Our preferences can change over time, and that's normal. ",
+                    "1.Remember that it's okay to explore new hobbies or activities if you're feeling uninspired.",
+                    "1.Sometimes a change in interests can be a sign of personal growth or a desire for something different in life.",
+                    "1.You're not alone in feeling this way. Many people go through periods of transition with their interests"
+                ]
+            },
+    
+            {
+                "tag": "interest", 
+                "input": [
+                    "explore new",
+                    "are evolving",
+                    "new possibilities",
+                    "fresh perspectives",
+                    "up to date self-expression"
+                ],
+                "output": [
+                    "0.Congratulations on rediscovering your passions. It's wonderful to see you feeling more engaged.",
+                    "0.Your resilience is truly remarkable. Keep nurturing your passions and interests"
+                ]
+            },
+    
+    
+        {
+            "tag": "depressed", 
+            "input": [
+                "sad",
+                "weight on chest",
+                "dark cloud over me",
+                "can't find joy",
+                "gloomy",
+                "Melancholic"
+            ],
+            "output": [
+                "1.Your feelings are valid, and it's okay to feel overwhelmed. ",
+                "1.You are stronger than you think, and you will get through this.",
+                "1.Remember, it's okay to ask for help. Seeking support doesn't make you weak."
+            ]
+        },
+    
+        {
+            "tag": "non_depressed", 
+            "input": [
+                "content",
+                "finding joy",
+                "focus on positive",
+                "positive outlook",
+                "find happiness"
+            ],
+                "output": [
+                    "0.You've shown incredible courage and determination in overcoming your challenges. ",
+                    "0.Your journey through depression has been tough, but you've shown incredible perseverance.",
+                    "0.You've shown that healing is possible, and I'm here to support you in maintaining your well-being."
+                ]
+        },
+    
+    
+        {
+            "tag": "not_spirited", 
+            "input": [
+                "became lazy",
+                "have been lethargic",
+                "no enthausiasm",
+                "feeling empty",
+                "low energetic",
+                "unhappy"
+            ],
+            "output": [
+                "1.Feeling low in energy and spirit can be tough, but let's start by incorporating small, enjoyable activities into your routine. Whether it's going for a walk, trying a new hobby, or practicing mindfulness, lets uplift your vitality "
+            ]
+        },
+    
+        {
+            "tag": "spirited", 
+            "input": [
+                "motivated",
+                "cheerful",
+                "feeling inspired",
+                "encouraged",
+                "high confidence",
+                "always ready"
+            ],
+            "output": [
+                "0.Great! It's wonderful to hear you're feeling more spirited. Let's keep the momentum going, Keep up the great work!"
+            ]
+        },
+    
+    
+    
+        {
+            "tag": "self_conscious", 
+            "input": [
+                "feeling insecure",
+                "feel shy",
+                "usually uneasy",
+                "being nervous",
+                "in a discomfort"
+            ],
+            "output": [
+                "1.It's understandable to feel self-conscious at times, but remember, you are more than your insecurities. Try practicing self-compassion and focusing on your strengths."
+            ]
+        },
+    
+        {
+            "tag": "not_self_conscious", 
+            "input": [
+                "feel confident",
+                "comfortabe",
+                "having self-acceptance",
+                "being stressfree"
+            ],
+            "output": [
+                "0.That's great to hear! It's important to maintain your well-being. Keep nurturing positive relationships, engaging in self-care, and pursuing your passions to continue thriving"
+            ]
+        },
+    
+    
+        {
+            "tag": "accused", 
+            "input": [
+                "feel charged for",
+                "suspecting myself",
+                "feeling faulty",
+                "being targeted",
+                "always judged"
+            ],
+            "output": [
+                "1.You're stronger than these feelings of being accused, you have the strength to overcome this challenge. Together, Lets empower you and shift your perspective"
+            ]
+        },
+    
+        {
+            "tag": "not_accused", 
+            "input": [
+                "feel acceptance",
+                "been supported",
+                "being encouraged ",
+                "respected",
+                "understood"
+            ],
+            "output": [
+                "0.Its good that you are motivated and Keep moving forward, one step at a time, and never underestimate the power of your own determination. You've got this!"
+            ]
+        },
+    
+    
+        {
+            "tag": "no_apetite", 
+            "input": [
+                "not hungry",
+                "lost apetite",
+                "reduced hunger",
+                "lack of desire",
+                "unwanting food",
+                "no cravings"
+            ],
+            "output": [
+                "1.Consider incorporating smaller, more frequent meals, staying hydrated, and practicing relaxation techniques such as deep breathing or meditation to help stimulate your appetite. "
+            ]
+        },
+        
+        {
+            "tag": "good_apetite", 
+            "input": [
+                "feeling healthy",
+                "feel strong",
+                "being voracious",
+                "feel good",
+                "great apetite",
+                "excellent apetite"
+            ],
+            "output": [
+                "0.That's great to hear you have a healthy appetite! Keep nurturing your well-being.Continue with a balanced diet, regular exercise, and maintaining a positive lifestyle to support your overall health."
+            ]
+        },    
+    
+   
+        {
+            "tag": "sleepless",
+            "input": [
+                "unable to sleep",
+                "deprived of sleep",
+                "wakefullness",
+                "difficulty in sleeping",
+                "sleepless nights",
+                "sleeplessness",
+                "feeling drowsy",
+                "restlessness"
+            ],
+            "output": [
+                "1.Unable to sleep can be caused due to excessive stress, try to relax and meditate"
+            ]
+        },
+        {
+            "tag": "sleep",
+            "input": [
+                "able to sleep",
+                "rested",
+                "no problem in sleeping"
+            ],
+            "output": [
+                "0.Nice, having a proper sleep is very important part of the schedule"
+            ]
+        },
+    
+    
+        {
+            "tag": "low_energy", 
+            "input": [
+                "feeling tired",
+                "lacking energy",
+                "struggling to awake",
+                "feeling drained",
+                "low motivation",
+                "difficulty concentrating"
+            ],
+            "output": [
+                "1. It's okay to feel low on energy sometimes. Remember to be kind to yourself during these times.",
+                "1. Consider taking short breaks throughout the day to recharge, even if it's just for a few minutes.",
+                "1. Prioritize self-care activities like getting enough sleep, eating nourishing foods, and staying hydrated to help boost your energy levels."
+            ]
+        },
+        {
+            "tag": "high_energy", 
+            "input": [
+                "feeling energized",
+                "motivated on tasks",
+                "having productive",
+                "feeling alert",
+                "being active",
+                "enjoying activities"
+            ],
+            "output": [
+                "0. Congratulations on feeling energized and motivated! Your productivity is commendable.",
+                "0. Keep up the fantastic work on staying focused and engaged. Your determination shines through.",
+                "0. Your ability to stay active and enjoy activities even when you're busy is impressive. Keep up the great work!"
+            ]
+        },
+    
+    
+        {
+          "tag": "irritable", 
+          "input": [
+              "feeling on edge",
+              "feeling cranky",
+              "having a bad mood",
+              "snapping at others",
+              "frustrated easily",
+              "short-tempered",
+              "irritated by small things",
+              "unable to relax"
+          ],
+          "output": [
+              "1. It's okay to feel irritable sometimes, but it's essential to recognize when it's affecting your well-being and relationships.",
+              "1. Consider taking a moment to breathe deeply and calm your mind when you notice yourself becoming irritable.",
+              "1. Try to identify any underlying causes of your irritability and address them. Sometimes, simply acknowledging the feeling can help alleviate it."
+          ]
+        },
+        {
+            "tag": "calm", 
+            "input": [
+                "feeling at ease",
+                "maintaining composure",
+                "responding calmly",
+                "keeping patience",
+                "feeling relaxed",
+                "handling stress well"
+            ],
+            "output": [
+                "0. Congratulations on maintaining your composure and handling stress well. Your ability to stay calm is admirable.",
+                "0. Keep up the great work on responding to challenges with patience and grace. Your resilience shines through.",
+                "0. Your ability to stay relaxed and at ease in difficult situations is impressive. Keep nurturing your inner calm."
+            ]
+        },
+    
+    
+          {
+                "tag": "deserving_punishment", 
+                "input": [
+                    "feeling guilty",
+                    "self-condemnation",
+                    "regretting actions",
+                    "feeling ashamed",
+                    "inherently flawed",
+                    "can't escape it",
+                    "self-punishment",
+                    "carrying weight world",
+                    "punishing myself"
+                ],
+                "output": [
+                    "1. It's important to remember that everyone makes mistakes. You're not alone in feeling this way. ",
+                    "1. Try to forgive yourself for any past actions. Holding onto guilt can weigh you down and prevent growth.",
+                    "1. Consider talking to someone you trust about how you're feeling. Sharing your burdens can lighten the load."
+                ]
+            },
+    
+          {
+                "tag": "not_deserving_punishment", 
+                "input": [
+                    "recognizing mistake",
+                    "taking responsibility",
+                    "working to make amends",
+                    "learning from actions",
+                    "seeking forgiveness",
+                    "striving to do better"
+                ],
+                "output": [
+                    "0. Acknowledging your mistakes and taking responsibility is the first step toward growth. You're on the right path.",
+                    "0. Remember that you're capable of change and improvement. Your past actions don't define your future.",
+                    "0. Keep working on making amends and learning from your experiences. You're stronger than you realize."
+                ]
+            },
+    
+   
+            {
+                "tag": "ill", 
+                "input": [
+                    "Sickness",
+                    "Ailment",
+                    "Disorder",
+                    "bad Condition",
+                    "constantly fighting",
+                    "discomfort",
+                    "breaking down",
+                    "powerless",
+                    "worse",
+                    "struggling"
+                ],
+                "output": [
+                    "1. Take the time you need to rest and prioritize your well-being. I'll support you in any decisions you make. ",
+                    "1. I care about you, and I'm sending you all the positive energy and support I can.",
+                    "1. It's okay to feel frustrated or overwhelmed. Your feelings are valid."
+                ]
+            },
+    
+            {
+                "tag": "not_ill", 
+                "input": [
+                    "self-care",
+                    "prevent",
+                    "positive lifestyle",
+                    "nutritious",
+                    "nourishing",
+                    "manage health effectively",
+                    "improvement",
+                    "regain health",
+                    "positive mindset"
+                ],
+                "output": [
+                    "0. You've shown incredible courage throughout this journey, and I'm so proud of you. ",
+                    "0. I'm grateful to have witnessed your journey to better health. Your story is truly inspiring.",
+                    "0. Remember to take things at your own pace as you continue to regain your strength. "
+                ]
+            }
+    
+    
+    ]
+}

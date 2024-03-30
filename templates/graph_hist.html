@@ -112,10 +112,10 @@
             var line_gt = new Chart(lgt, {
                 type: "line",
                 data: {
-                    labels: {{ labels | safe}},
+                    labels: {{ GT_labels | safe}},
                     datasets: [
                         {label: "General Test Score",
-                        data: {{ values | safe }},
+                        data: {{ GT_values | safe }},
                         fill: false,
                         borderColor: "#2bc770"}
                     ]
@@ -176,13 +176,13 @@
 
         <script>
             var lanx = document.getElementById("line_anx").getContext("2d")
-            var line_gt = new Chart(lanx, {
+            var line_anx = new Chart(lanx, {
                 type: "line",
                 data: {
-                    labels: {{ labels | safe}},
+                    labels: {{ Anxiety_labels | safe}},
                     datasets: [
                         {label: "Anxiety Score",
-                        data: {{ values | safe }},
+                        data: {{ Anxiety_values | safe }},
                         fill: false,
                         borderColor: "#ece75f"}
                     ]
