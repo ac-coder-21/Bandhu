@@ -53,10 +53,46 @@ def dashboard():
 
     result_rev = []
     final_res = []
+    null_obj = {'test': '-', 'score': '-'}
     for doc in result:
+        print(doc)
         result_rev.append(doc)
 
+    if len(result_rev) == 0:
+        for i in range(5):
+            final_res.append(null_obj)
+        return render_template('dashboard.html', final_res=final_res)
+
+    
+
+    if len(result_rev) == 1:
+        for d in result_rev:
+            final_res.append(d)
+        for i in range(4):
+            final_res.append(null_obj)
+        return render_template('dashboard.html', final_res=final_res)
+    
     result_rev = result_rev[::-1]
+    
+    if len(result_rev) == 2:
+        for d in result_rev:
+            final_res.append(d)
+        for i in range(3):
+            final_res.append(null_obj)
+        return render_template('dashboard.html', final_res=final_res)
+    
+    if len(result_rev) == 3:
+        for d in result_rev:
+            final_res.append(d)
+        for i in range(2):
+            final_res.append(null_obj)
+        return render_template('dashboard.html', final_res=final_res)
+    
+    if len(result_rev) == 4:
+        for d in result_rev:
+            final_res.append(d)
+        final_res.append(null_obj)
+        return render_template('dashboard.html', final_res=final_res)
 
     for i in range(5):
         final_res.append(result_rev[i])
