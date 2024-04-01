@@ -3,14 +3,18 @@ from functools import wraps
 import pymongo
 from user.models import User
 from datetime import datetime
+from bson import ObjectId
+from fpdf import FPDF
+import time
+import html
 
 from GT.chat_gt import get_response
 from Anxiety.chat_anx import get_response_anx
 from Depression.chat_dep import get_response_dep
 from det_que_or_continuation import gmh_questions, anx_questions, dep_questions
-from bson import ObjectId
-from fpdf import FPDF
-
+import gridfs
+from pdf_report import generate_pdf
+from get_gt_arr import get_gt_val, get_dep_val, get_anx_val
 
 
 
@@ -32,7 +36,11 @@ def login_required(f):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('signin.html')
+
+@app.route('/create-account/')
+def create_acc():
+    return render_template('signup.html')
 
 @app.route('/dashboard/')
 @login_required
@@ -41,9 +49,19 @@ def dashboard():
     db = client.test_user
     collection = db.score
     target_object_id = session['user']['_id']
-    result = collection.find({"_idUser": target_object_id}).limit(5)
+    result = collection.find({"_idUser": target_object_id})
 
-    return render_template('dashboard.html', result=result)
+    result_rev = []
+    final_res = []
+    for doc in result:
+        result_rev.append(doc)
+
+    result_rev = result_rev[::-1]
+
+    for i in range(5):
+        final_res.append(result_rev[i])
+
+    return render_template('dashboard.html', final_res=final_res)
 
 @app.route('/users/signup', methods = ['POST'])
 def signup():
@@ -125,12 +143,29 @@ def predict():
         current_date = datetime.now()
         formatted_date = current_date.strftime('%d-%m-%Y')
 
+        name = session['user']['name']
+        timestamp = time.time()
+        file_name = f'{name}-{timestamp}-General Mental Health Assessment.pdf'
+
         score_data = {
             "_idUser": target_object_id,
             "test": "GT",
             "score": str(precent_resp*100) + '%',
-            "date": formatted_date
+            "date": formatted_date,
+            "file_name": file_name
         }
+
+        prev_values =  get_gt_val(target_object_id=target_object_id)
+
+        
+
+        generate_pdf(date=formatted_date, name=session['user']['name'], age=session['user']['age'], gender=session['user']['gender'], education=session['user']['qualification'], test='General Mental Health Assesment', prev_score=prev_values[1], prev_test_date=prev_values[0], score=str(precent_resp*100) + '%', file_name=file_name)
+
+        location = 'D:\Bandhu-A-mental-chatbot-app\\' + file_name
+        file_Data = open(location, 'rb')
+        data = file_Data.read()
+        fs = gridfs.GridFS(db)
+        fs.put(data=data, filename = file_name)
 
         score.insert_one(score_data)
 
@@ -148,10 +183,6 @@ def predict():
             output = get_response("undetected general mental test")
             message = {"output": output}
             return jsonify(message)
-        
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("helvetica", "", 10)
         
         
 
@@ -257,10 +288,14 @@ def predict_anx():
 
         score = db.score
 
+        current_date = datetime.now()
+        formatted_date = current_date.strftime('%d-%m-%Y')
+
         score_data = {
             "_idUser": session['user']['_id'],
             "test": "Anxiety test",
-            "score": str(precent_resp*100) + '%'
+            "score": str(precent_resp*100) + '%',
+            "date": formatted_date
         }
 
         score.insert_one(score_data)
@@ -299,10 +334,10 @@ def anxiety_ui():
 def predict_dep():
     mongo_uri = "mongodb://localhost:27017/test_user"
     client = pymongo.MongoClient(mongo_uri)
-    db = client.test_mc
-    collection = db.Project
+    db = client.test_user
+    collection = db.users
 
-    target_object_id = ObjectId("65e4267c064e0a1420a3c6c5")
+    target_object_id = session['user']['_id']
 
     document = collection.find_one({"_id": target_object_id})
     if document is None:
@@ -384,10 +419,14 @@ def predict_dep():
 
         score = db.score
 
+        current_date = datetime.now()
+        formatted_date = current_date.strftime('%d-%m-%Y')
+
         score_data = {
-            "_idUser": ObjectId("65e4267c064e0a1420a3c6c5"),
+            "_idUser": session['user']['_id'],
             "test": "Anxiety test",
-            "score": str(precent_resp*100) + '%'
+            "score": str(precent_resp*100) + '%',
+            "date": formatted_date
         }
 
         score.insert_one(score_data)
@@ -428,23 +467,13 @@ def score_graph():
     target_object_id = session['user']['_id']
     result = collection.find({"_idUser": target_object_id})
     result_anx = collection.find({"_idUser": target_object_id})
+    result_dep = collection.find({"_idUser": target_object_id})
 
-
-    data = [
-        ("01-01-2020", 1597),
-        ("02-01-2020", 1456),
-        ("03-01-2020", 1908),
-        ("04-01-2020", 896),
-        ("05-01-2020", 755),
-        ("06-01-2020", 453),
-        ("07-01-2020", 1100),
-        ("08-01-2020", 1235),
-        ("09-01-2020", 1478)
-    ]
 
 
     GT_arr = []
     anx_arr = []
+    dep_arr = []
     for doc in result:
         if doc['test'] == 'GT':
             GT_arr.append(tuple([doc['date'], doc['score'].strip('%') ]))
@@ -453,17 +482,25 @@ def score_graph():
         if doc_a['test'] == 'Anxiety':
             anx_arr.append(tuple([doc_a['date'], float(doc_a['score'].strip('%')) ]))
 
-    labels = [row[0] for row in data]
-    values = [row[1] for row in data]
+    for doc_d in result_dep:
+        if doc_d['test'] == 'Depression':
+            dep_arr.append(tuple([doc_d['date'], float(doc_d['score'].strip('%')) ]))
+
+    decoded_GT_arr = [(html.unescape(date), html.unescape(value)) for date, value in GT_arr]
+    decoded_anx_arr = [(html.unescape(date_anx), html.unescape(str(value_anx))) for date_anx, value_anx in anx_arr]
+    decoded_dep_arr = [(html.unescape(date_dep), html.unescape(str(value_dep))) for date_dep, value_dep in dep_arr]
 
     GT_labels = [row[0] for row in GT_arr]
     GT_values = [row[1] for row in GT_arr]
+    
 
     Anxiety_labels = [row[0] for row in anx_arr]
     Anxiety_values = [row[1] for row in anx_arr]
 
+    Depression_labels = [row[0] for row in dep_arr]
+    Depression_values = [row[1] for row in dep_arr]
 
-    return render_template('graph_hist.html', labels=labels, values=values, GT_labels=GT_labels, GT_values=GT_values, Anxiety_labels=Anxiety_labels, Anxiety_values=Anxiety_values)
+    return render_template('graph_hist.html', decoded_dep_arr = decoded_dep_arr,decoded_anx_arr=decoded_anx_arr,decoded_GT_arr=decoded_GT_arr,GT_labels=GT_labels, GT_values=GT_values, Anxiety_labels=Anxiety_labels, Anxiety_values=Anxiety_values, Depression_labels=Depression_labels, Depression_values= Depression_values)
 
 
 

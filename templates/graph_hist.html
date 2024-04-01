@@ -7,8 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="front-end-anxiety/">
-    <link rel="stylesheet" href="front-end-gt/">
+    <!-- <link rel="stylesheet" href="front-end-anxiety/">
+    <link rel="stylesheet" href="front-end-gt/"> -->
 </head>
 <body>
     <div class="relative py-2 w-9/12 mx-auto px-10 bg-slate-200 mb-6">
@@ -76,30 +76,11 @@
             <div style="margin-left: 150px; margin-bottom: 20px; margin-top: 20px;">
                 <table style="padding: 10px; margin-top: 20px; border-collapse: collapse; border: 2px solid #2bc770; border-radius: 10px;">
                     <tr>
-                        <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 1</td>
-                        <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 2</td>
-                    <td style="background-color: #2bc770; color: white; padding: 10px 30px;">Data 3</td>
+                        <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Date</td>
+                        <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Score</td>
+                        <td style="background-color: #2bc770; color: white; padding: 10px 30px;">Download</td>
                 </tr>
-                <tr>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 4</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 5</td>
-                    <td style="padding: 10px 30px;">Data 6</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 7</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 8</td>
-                    <td style="padding: 10px 30px;">Data 9</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 10</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 11</td>
-                    <td style="padding: 10px 30px;">Data 12</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 13</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 14</td>
-                    <td style="padding: 10px 30px;">Data 15</td>
-                </tr>
+                <tbody></tbody>
             </table>
         </div>
         
@@ -130,6 +111,20 @@
                     responsive: false
                 }
             })
+
+            const tbodyGT = document.querySelector('tbody')
+    
+                tbodyGT.innerHTML += `
+                {% for date, value in decoded_GT_arr %}
+                <tr>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                </tr>
+                {% endfor %}
+                `
+
+            
         </script>
     </div>
 
@@ -147,30 +142,11 @@
         <div style="margin-left: 150px; margin-bottom: 20px; margin-top: 20px;">
             <table style="padding: 10px; margin-top: 20px; border-collapse: collapse; border: 2px solid #ece75f; border-radius: 10px;">
                 <tr>
-                    <td style="background-color: #ece75f; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 1</td>
-                    <td style="background-color: #ece75f; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 2</td>
-                <td style="background-color: #ece75f; color: white; padding: 10px 30px;">Data 3</td>
+                    <td style="background-color: #ece75f; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Date</td>
+                    <td style="background-color: #ece75f; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Score</td>
+                <td style="background-color: #ece75f; color: white; padding: 10px 30px;">Download</td>
             </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 4</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 5</td>
-                <td style="padding: 10px 30px;">Data 6</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 7</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 8</td>
-                <td style="padding: 10px 30px;">Data 9</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 10</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 11</td>
-                <td style="padding: 10px 30px;">Data 12</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 13</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 14</td>
-                <td style="padding: 10px 30px;">Data 15</td>
-            </tr>
+            <tbody id="anx_table"></tbody>
         </table>
     </div>
 
@@ -197,6 +173,19 @@
                     responsive: false
                 }
             })
+
+            const tbodyanx = document.getElementById('anx_table')
+    
+                tbodyanx.innerHTML += `
+                {% for date_anx, value_anx in decoded_anx_arr %}
+                <tr>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date_anx }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value_anx }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                </tr>
+                {% endfor %}
+                `
+
         </script>
     </div>
 
@@ -214,42 +203,23 @@
         <div style="margin-left: 135px; margin-bottom: 20px; margin-top: 20px;">
             <table style="padding: 10px; margin-top: 20px; border-collapse: collapse; border: 2px solid #f73820; border-radius: 10px;">
                 <tr>
-                    <td style="background-color: #f73820; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 1</td>
-                    <td style="background-color: #f73820; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Data 2</td>
-                <td style="background-color: #f73820; color: white; padding: 10px 30px;">Data 3</td>
+                    <td style="background-color: #f73820; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Date</td>
+                    <td style="background-color: #f73820; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Score</td>
+                <td style="background-color: #f73820; color: white; padding: 10px 30px;">Download</td>
             </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 4</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 5</td>
-                <td style="padding: 10px 30px;">Data 6</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 7</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 8</td>
-                <td style="padding: 10px 30px;">Data 9</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 10</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 11</td>
-                <td style="padding: 10px 30px;">Data 12</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 13</td>
-                <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">Data 14</td>
-                <td style="padding: 10px 30px;">Data 15</td>
-            </tr>
+           <tbody id="dep_table"></tbody>
         </table>
     </div>
 
         <script>
             var ldep = document.getElementById("line_dep").getContext("2d")
-            var line_gt = new Chart(ldep, {
+            var line_dep = new Chart(ldep, {
                 type: "line",
                 data: {
-                    labels: {{ labels | safe}},
+                    labels: {{ Depression_labels | safe}},
                     datasets: [
                         {label: "Depression Score",
-                        data: {{ values | safe }},
+                        data: {{ Depression_values | safe }},
                         fill: false,
                         borderColor: "#f73820"}
                     ]
@@ -264,6 +234,18 @@
                     responsive: false
                 }
             })
+
+            const tbodydep = document.getElementById('dep_table')
+    
+            tbodydep.innerHTML += `
+                {% for date_dep, value_dep in decoded_dep_arr %}
+                <tr>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date_dep }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value_dep }}</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                </tr>
+                {% endfor %}
+                `
         </script>
     </div>
     

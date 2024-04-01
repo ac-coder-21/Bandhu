@@ -1,36 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-    <div class="card-wrapper">
-        <div class="card">
-            <h1 class="center">Dashboard</h1>
-            <p class="center">You are currently loggedIn</p>
-
-            <div class="center">
-                <a href="/user/signout" class="btn btn--secondary">Sign Out</a>
-            </div>
-        </div>
-        <div class="card">
-            <h2 class="center">YourInfo</h2>
-
-            <p>
-                <strong>ID:</strong> {{ session['user']['_id'] }} <br>
-                <strong>Name:</strong> {{ session['user']['name'] }} <br>
-                <strong>Email:</strong> {{ session['user']['email'] }} <br>
-            </p>
-        </div>
-    </div>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,38 +66,6 @@
           <h1 class="font-bold text-3xl">Bandhu</h1>
         </div>
       </div>
-
-      <!-- <div class="carousel w-full mb-10">
-        <div id="slide1" class="carousel-item relative w-full">
-          <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" class="btn btn-circle">❮</a> 
-            <a href="#slide2" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide2" class="carousel-item relative w-full">
-          <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" class="w-full" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" class="btn btn-circle">❮</a> 
-            <a href="#slide3" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide3" class="carousel-item relative w-full">
-          <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" class="w-full" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" class="btn btn-circle">❮</a> 
-            <a href="#slide4" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide4" class="carousel-item relative w-full">
-          <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" class="w-full" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" class="btn btn-circle">❮</a> 
-            <a href="#slide1" class="btn btn-circle">❯</a>
-          </div>
-        </div>
-      </div> -->
-
 
       <div class="w-full flex justify-center gap-72 mb-10">
 
@@ -245,18 +180,20 @@
                             
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                {{ result[0]['test'] }}
+                                {{ final_res[0]['test'] }}
                               </div>
                               
                             </div>
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href=""><div class="text-sm text-gray-900 ">Download</div></a>
+                          <a href=""><div class="text-sm text-gray-900 ">
+                            <button>Download</button>
+                          </div></a>
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                            {{ result[0]['score'] }}
+                            {{ final_res[0]['score'] }}
                           </span>
                         </td>
                         
@@ -268,7 +205,7 @@
                             
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                {{ result[1]['test'] }}
+                                {{ final_res[1]['test'] }}
                               
                           </div>
                         </td>
@@ -277,7 +214,7 @@
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                            {{ result[1]['score'] }}
+                            {{ final_res[1]['score'] }}
                           </span>
                         </td>
                        
@@ -289,7 +226,7 @@
                             
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                {{ result[2]['test'] }}
+                                {{ final_res[2]['test'] }}
                               
                           </div>
                         </td>
@@ -298,7 +235,7 @@
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                            {{ result[2]['score'] }}
+                            {{ final_res[2]['score'] }}
                           </span>
                         </td>
                        
@@ -312,7 +249,7 @@
                           
                           <div class="ml-4">
                             <div class="text-sm font-medium text-gray-900">
-                              {{ result[3]['test'] }}
+                              {{ final_res[3]['test'] }}
                             
                         </div>
                       </td>
@@ -321,7 +258,7 @@
                       </td>
                       <td class="whitespace-nowrap px-4 py-4">
                         <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                          {{ result[3]['score'] }}
+                          {{ final_res[3]['score'] }}
                         </span>
                       </td>
                      
@@ -335,7 +272,7 @@
                         
                         <div class="ml-4">
                           <div class="text-sm font-medium text-gray-900">
-                            {{ result[4]['test'] }}
+                            {{ final_res[4]['test'] }}
                           
                       </div>
                     </td>
@@ -344,7 +281,7 @@
                     </td>
                     <td class="whitespace-nowrap px-4 py-4">
                       <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                        {{ result[4]['score'] }}
+                        {{ final_res[4]['score'] }}
                       </span>
                     </td>
                    
@@ -461,7 +398,7 @@
                 <span class="sr-only">Facebook page</span>
               </a>
               <a
-                href="#"
+                href="https://discord.gg/gjCTfszcv3"
                 class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
@@ -497,7 +434,7 @@
                 <span class="sr-only">Twitter page</span>
               </a>
               <a
-                href="#"
+                href="https://github.com/ac-coder-21/Bandhu-A-mental-chatbot-app"
                 class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
               >
                 <svg
