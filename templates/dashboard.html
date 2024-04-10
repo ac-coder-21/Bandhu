@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <link rel="stylesheet" href="front-end-anxiety/">
     <link rel="stylesheet" href="front-end-gt/">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
 </head>
 <body>
-    <div class="relative py-2 w-9/12 mx-auto px-10 bg-slate-200 mb-6">
+    <div class="relative py-2 w-9/12 mx-auto px-10 bg-slate-200 mb-6 	">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
           <div class="inline-flex items-center space-x-2">
             <span>
@@ -68,10 +70,10 @@
         </div>
       </div>
 
-      <div class="w-full flex justify-center gap-72 mb-10">
+      <div class="w-full flex justify-center gap-72 mb-10" >
 
 
-        <div class="w-2/5 rounded-md border p-2 bg-slate-100 mb-6">
+        <div class="w-2/5 rounded-md border p-2 bg-slate-100 mb-6" >
           <!-- <img
             src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGh1bWFufGVufDB8fDB8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
             alt="Laptop"
@@ -94,7 +96,7 @@
           </div>
         </div>
         
-        <div class="w-96 rounded-md border p-2 bg-slate-100 mb-6">
+        <div class="w-96 rounded-md border p-2 bg-slate-100 mb-6" >
           
           <div class="py-10 text-center">
             <h1 class="text-3xl font-bold mb-4">Take Test</h1>
@@ -190,9 +192,9 @@
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href=""><div class="text-sm text-gray-900 ">
-                            <button>Download</button>
-                          </div></a>
+                          <div class="text-sm text-gray-900 ">
+                            <a href="{{ url_for('static', filename=final_res[0]['file_name']) }}" target="_blank">View</a>
+                          </div>
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
@@ -213,7 +215,7 @@
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href=""><div class="text-sm text-gray-900 ">Download</div></a>
+                          <a href="{{ url_for('static', filename=final_res[1]['file_name']) }}"><div class="text-sm text-gray-900 ">View</div></a>
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
@@ -234,7 +236,7 @@
                           </div>
                         </td>
                         <td class="whitespace-nowrap px-12 py-4">
-                          <a href=""><div class="text-sm text-gray-900 ">Download</div></a>
+                          <a href="{{ url_for('static', filename=final_res[2]['file_name']) }}"><div class="text-sm text-gray-900 ">View</div></a>
                         </td>
                         <td class="whitespace-nowrap px-4 py-4">
                           <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
@@ -257,7 +259,7 @@
                         </div>
                       </td>
                       <td class="whitespace-nowrap px-12 py-4">
-                        <a href=""><div class="text-sm text-gray-900 ">Download</div></a>
+                        <a href="{{ url_for('static', filename=final_res[3]['file_name']) }}"><div class="text-sm text-gray-900 ">View</div></a>
                       </td>
                       <td class="whitespace-nowrap px-4 py-4">
                         <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
@@ -280,7 +282,7 @@
                       </div>
                     </td>
                     <td class="whitespace-nowrap px-12 py-4">
-                      <a href=""><div class="text-sm text-gray-900 ">Download</div></a>
+                      <a href="{{ url_for('static', filename=final_res[4]['file_name']) }}"><div class="text-sm text-gray-900 ">View</div></a>
                     </td>
                     <td class="whitespace-nowrap px-4 py-4">
                       <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
@@ -483,6 +485,11 @@
       </footer>
 
      
-      
+      <script>
+
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            window.location.href = '/download';
+        });
+    </script>
 </body>
 </html>

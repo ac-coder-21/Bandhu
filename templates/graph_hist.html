@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
     <!-- <link rel="stylesheet" href="front-end-anxiety/">
     <link rel="stylesheet" href="front-end-gt/"> -->
 </head>
@@ -78,7 +80,7 @@
                     <tr>
                         <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Date</td>
                         <td style="background-color: #2bc770; color: white; padding: 10px 30px; border-right: 1px solid lightgrey;">Score</td>
-                        <td style="background-color: #2bc770; color: white; padding: 10px 30px;">Download</td>
+                        <td style="background-color: #2bc770; color: white; padding: 10px 30px;">Report</td>
                 </tr>
                 <tbody></tbody>
             </table>
@@ -115,11 +117,11 @@
             const tbodyGT = document.querySelector('tbody')
     
                 tbodyGT.innerHTML += `
-                {% for date, value in decoded_GT_arr %}
+                {% for date, value, file_name in decoded_GT_arr %}
                 <tr>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date }}</td>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value }}</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;"><a href="{{ url_for('static', filename=file_name) }}" target="_blank">View</a></td>
                 </tr>
                 {% endfor %}
                 `
@@ -177,11 +179,11 @@
             const tbodyanx = document.getElementById('anx_table')
     
                 tbodyanx.innerHTML += `
-                {% for date_anx, value_anx in decoded_anx_arr %}
+                {% for date_anx, value_anx, file_name_anx in decoded_anx_arr %}
                 <tr>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date_anx }}</td>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value_anx }}</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;"><a href="{{ url_for('static', filename=file_name_anx) }}" target="_blank">View</a></td>
                 </tr>
                 {% endfor %}
                 `
@@ -238,11 +240,11 @@
             const tbodydep = document.getElementById('dep_table')
     
             tbodydep.innerHTML += `
-                {% for date_dep, value_dep in decoded_dep_arr %}
+                {% for date_dep, value_dep, file_name_dep in decoded_dep_arr %}
                 <tr>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ date_dep }}</td>
                     <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">{{ value_dep }}</td>
-                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;">download</td>
+                    <td style="padding: 10px 30px; border-right: 1px solid lightgrey;"><a href="{{ url_for('static', filename=file_name_dep) }}" target="_blank">View</a></td>
                 </tr>
                 {% endfor %}
                 `

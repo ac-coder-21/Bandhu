@@ -15,7 +15,7 @@ prev_score = prev_values[1]
 prev_test_date = prev_values[0]
 score = "46.7%"
 
-def generate_pdf(date, name, age, gender, education, test, prev_score, prev_test_date, score, file_name):
+def generate_pdf(date, name, age, gender, education, test, prev_score, prev_test_date, score, file_name, output, prev_recommendation):
     pdf = FPDF('P', 'mm', 'Letter')
 
     #adding a page
@@ -46,7 +46,7 @@ def generate_pdf(date, name, age, gender, education, test, prev_score, prev_test
     pdf.set_font('times', '', 12)
     pdf.cell(40, 1, f'Test Type: {test}', ln=True)
     pdf.cell(40, 20, f'Test Score: {prev_score}', ln= True)
-    pdf.cell(40, 1, 'Previously Recommended Remedy: Try to relax and meditate, Have proper sleep and proper rest in free time.', ln= True)
+    pdf.cell(40, 1, f'Previously Recommendation: {prev_recommendation}', ln= True)
     pdf.cell(40, 20, f'Test Date: {prev_test_date}', ln= True)
 
     #test details
@@ -56,7 +56,7 @@ def generate_pdf(date, name, age, gender, education, test, prev_score, prev_test
     pdf.cell(40, 10, f'Test Type: {test}t', ln=True)
     pdf.cell(40, 10, f'Current Test Score: {score}', ln=True)
     pdf.cell(100, 10, 'Reference:   Level 1: 0-5      Level 2: 6-7     Level 3: 8-10', border=True, ln=True, align='C')
-    pdf.cell(40, 20, 'Remedy: Try to have proper Sleep and proper diet on time.', ln=True)
+    pdf.cell(40, 20, f'Recommendation: {output}', ln=True)
 
     # Generate QR code
     # qr = qrcode.QRCode(
